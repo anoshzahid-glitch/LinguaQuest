@@ -1,6 +1,7 @@
 export const LESSON_DATA = {
   spanish: {
     A1: [
+      // Alphabet & Pronunciation (2 lessons)
       {
         type: 'alphabet',
         question: 'Which letter makes the "ah" sound in Spanish?',
@@ -10,6 +11,15 @@ export const LESSON_DATA = {
         vocabulary: { word: 'A', translation: 'Letter A', example: 'Mamá, papá, casa' }
       },
       {
+        type: 'alphabet',
+        question: 'Which vowel makes the "eh" sound (like "red")?',
+        options: ['A', 'E', 'I', 'U'],
+        correct: 1,
+        explanation: 'The letter E in Spanish makes the "eh" sound.',
+        vocabulary: { word: 'E', translation: 'Letter E', example: 'Leche, café, tres' }
+      },
+      // Numbers (3 lessons)
+      {
         type: 'numbers',
         question: 'What is the number "1" in Spanish?',
         options: ['uno', 'dos', 'tres', 'cero'],
@@ -18,12 +28,37 @@ export const LESSON_DATA = {
         vocabulary: { word: 'uno', translation: 'one', example: 'Tengo un libro.' }
       },
       {
+        type: 'numbers',
+        question: 'How do you say "3" in Spanish?',
+        options: ['uno', 'dos', 'tres', 'cuatro'],
+        correct: 2,
+        explanation: '"Tres" is three in Spanish.',
+        vocabulary: { word: 'tres', translation: 'three', example: 'Tres amigos' }
+      },
+      {
+        type: 'numbers',
+        question: 'What does "cero" mean?',
+        options: ['zero', 'one', 'two', 'ten'],
+        correct: 0,
+        explanation: '"Cero" means zero.',
+        vocabulary: { word: 'cero', translation: 'zero', example: 'Cero problemas' }
+      },
+      // Vocabulary (5 lessons)
+      {
         type: 'vocabulary',
         question: 'How do you say "Hello" in Spanish?',
         options: ['Hola', 'Adiós', 'Sí', 'No'],
         correct: 0,
         explanation: '"Hola" is the basic greeting in Spanish, used any time of day.',
         vocabulary: { word: 'Hola', translation: 'Hello', example: 'Hola, amigo.' }
+      },
+      {
+        type: 'vocabulary',
+        question: 'How do you say "Goodbye" in Spanish?',
+        options: ['Hola', 'Adiós', 'Gracias', 'Por favor'],
+        correct: 1,
+        explanation: '"Adiós" means goodbye.',
+        vocabulary: { word: 'Adiós', translation: 'Goodbye', example: 'Adiós, hasta mañana.' }
       },
       {
         type: 'vocabulary',
@@ -40,9 +75,35 @@ export const LESSON_DATA = {
         correct: 2,
         explanation: '"Gracias" is how you say thank you in Spanish.',
         vocabulary: { word: 'Gracias', translation: 'Thank you', example: 'Gracias por todo.' }
+      },
+      {
+        type: 'vocabulary',
+        question: 'What does "Por favor" mean?',
+        options: ['Thank you', 'Please', 'Excuse me', 'Hello'],
+        correct: 1,
+        explanation: '"Por favor" means please.',
+        vocabulary: { word: 'Por favor', translation: 'Please', example: 'Agua, por favor.' }
+      },
+      // Basic Grammar (2 lessons)
+      {
+        type: 'grammar',
+        question: 'What is "I" in Spanish?',
+        options: ['Tú', 'Yo', 'Él', 'Ella'],
+        correct: 1,
+        explanation: '"Yo" means "I" in Spanish.',
+        grammar: 'Subject pronouns: Yo (I), Tú (you), Él/Ella (he/she)'
+      },
+      {
+        type: 'grammar',
+        question: 'What is "you" (informal) in Spanish?',
+        options: ['Yo', 'Tú', 'Él', 'Nosotros'],
+        correct: 1,
+        explanation: '"Tú" is informal "you" for friends and family.',
+        grammar: 'Use "tú" with friends, "usted" for formal situations'
       }
     ],
     A2: [
+      // Greetings & Time (2 lessons)
       {
         type: 'vocabulary',
         question: 'What is "Good morning" in Spanish?',
@@ -52,13 +113,14 @@ export const LESSON_DATA = {
         vocabulary: { word: 'Buenos días', translation: 'Good morning', example: 'Buenos días, profesor.' }
       },
       {
-        type: 'grammar',
-        question: 'Complete: "Yo ___ estudiante" (I am a student)',
-        options: ['soy', 'eres', 'es', 'son'],
-        correct: 0,
-        explanation: '"Soy" is "I am" - the first person singular of the verb "ser".',
-        grammar: 'Verb "ser" (to be): yo soy, tú eres, él/ella es'
+        type: 'vocabulary',
+        question: 'What is "Good night" in Spanish?',
+        options: ['Buenos días', 'Buenas tardes', 'Buenas noches', 'Hasta luego'],
+        correct: 2,
+        explanation: '"Buenas noches" is used at night for hello or goodbye.',
+        vocabulary: { word: 'Buenas noches', translation: 'Good night', example: 'Buenas noches, mamá.' }
       },
+      // Numbers (2 lessons)
       {
         type: 'numbers',
         question: 'What is the number "10" in Spanish?',
@@ -68,6 +130,40 @@ export const LESSON_DATA = {
         vocabulary: { word: 'diez', translation: 'ten', example: 'Tengo diez años.' }
       },
       {
+        type: 'numbers',
+        question: 'How do you say "seven" in Spanish?',
+        options: ['cinco', 'seis', 'siete', 'ocho'],
+        correct: 2,
+        explanation: '"Siete" is seven.',
+        vocabulary: { word: 'siete', translation: 'seven', example: 'Siete días' }
+      },
+      // Grammar - Ser (3 lessons)
+      {
+        type: 'grammar',
+        question: 'Complete: "Yo ___ estudiante" (I am a student)',
+        options: ['soy', 'eres', 'es', 'son'],
+        correct: 0,
+        explanation: '"Soy" is "I am" - the first person singular of the verb "ser".',
+        grammar: 'Verb "ser" (to be): yo soy, tú eres, él/ella es'
+      },
+      {
+        type: 'grammar',
+        question: 'Complete: "Tú ___ inteligente" (You are intelligent)',
+        options: ['soy', 'eres', 'es', 'son'],
+        correct: 1,
+        explanation: '"Eres" is "you are" (informal).',
+        grammar: 'Ser for characteristics: Yo soy, Tú eres, Él/Ella es'
+      },
+      {
+        type: 'grammar',
+        question: 'Complete: "Ella ___ profesora" (She is a teacher)',
+        options: ['soy', 'eres', 'es', 'somos'],
+        correct: 2,
+        explanation: '"Es" is used for he/she/it.',
+        grammar: 'Third person: Él es, Ella es, Usted es'
+      },
+      // Vocabulary - Common words (3 lessons)
+      {
         type: 'vocabulary',
         question: 'What does "agua" mean?',
         options: ['food', 'water', 'fire', 'house'],
@@ -76,15 +172,41 @@ export const LESSON_DATA = {
         vocabulary: { word: 'agua', translation: 'water', example: 'Quiero agua, por favor.' }
       },
       {
+        type: 'vocabulary',
+        question: 'What does "comida" mean?',
+        options: ['drink', 'food', 'house', 'friend'],
+        correct: 1,
+        explanation: '"Comida" means food.',
+        vocabulary: { word: 'comida', translation: 'food', example: 'La comida está rica.' }
+      },
+      {
+        type: 'vocabulary',
+        question: 'What does "casa" mean?',
+        options: ['car', 'house', 'street', 'city'],
+        correct: 1,
+        explanation: '"Casa" means house or home.',
+        vocabulary: { word: 'casa', translation: 'house', example: 'Mi casa es grande.' }
+      },
+      // Conversation (2 lessons)
+      {
         type: 'conversation',
         question: 'How would you ask "What time is it?"',
         options: ['¿Qué hora es?', '¿Cómo estás?', '¿Dónde está?', '¿Cuánto cuesta?'],
         correct: 0,
         explanation: '"¿Qué hora es?" literally means "What hour is it?"',
         vocabulary: { word: '¿Qué hora es?', translation: 'What time is it?', example: '¿Qué hora es? Son las tres.' }
+      },
+      {
+        type: 'conversation',
+        question: 'How do you ask "How are you?" (informal)?',
+        options: ['¿Qué tal?', '¿Cuánto cuesta?', '¿Dónde está?', '¿Qué hora es?'],
+        correct: 0,
+        explanation: '"¿Qué tal?" or "¿Cómo estás?" both mean "How are you?"',
+        vocabulary: { word: '¿Qué tal?', translation: 'How are you?', example: '¿Qué tal? ¿Bien?' }
       }
     ],
     B1: [
+      // Verb "Ir" (2 lessons)
       {
         type: 'grammar',
         question: 'Choose the correct form: "Ellos ___ al parque" (They go to the park)',
@@ -94,13 +216,14 @@ export const LESSON_DATA = {
         grammar: 'Verb "ir" (to go): voy, vas, va, vamos, vais, van'
       },
       {
-        type: 'vocabulary',
-        question: 'What does "familia" mean?',
-        options: ['friend', 'family', 'food', 'house'],
-        correct: 1,
-        explanation: '"Familia" is similar to the English word "family".',
-        vocabulary: { word: 'familia', translation: 'family', example: 'Mi familia es grande.' }
+        type: 'grammar',
+        question: 'Complete: "Nosotros ___ a la playa" (We go to the beach)',
+        options: ['voy', 'vas', 'van', 'vamos'],
+        correct: 3,
+        explanation: '"Vamos" is the "we" form of "ir".',
+        grammar: 'Ir: yo voy, tú vas, él va, nosotros vamos'
       },
+      // Gustar (2 lessons)
       {
         type: 'grammar',
         question: 'Complete: "Me ___ el chocolate" (I like chocolate)',
@@ -111,6 +234,15 @@ export const LESSON_DATA = {
       },
       {
         type: 'grammar',
+        question: 'Complete: "Me ___ las manzanas" (I like apples)',
+        options: ['gusto', 'gusta', 'gustan', 'gustas'],
+        correct: 2,
+        explanation: 'Use "gustan" with plural nouns.',
+        grammar: 'Plural nouns use "gustan": Me gustan los libros'
+      },
+      // Past Tense (2 lessons)
+      {
+        type: 'grammar',
         question: 'Choose the past tense: "Ayer yo ___ al cine" (Yesterday I went to the cinema)',
         options: ['voy', 'fui', 'iré', 'vaya'],
         correct: 1,
@@ -118,12 +250,62 @@ export const LESSON_DATA = {
         grammar: 'Preterite of ir: fui, fuiste, fue, fuimos, fuisteis, fueron'
       },
       {
+        type: 'grammar',
+        question: 'Past tense: "Ayer comí pizza" means...',
+        options: ['I eat pizza', 'I ate pizza yesterday', 'I will eat pizza', 'I like pizza'],
+        correct: 1,
+        explanation: 'The -í ending indicates past tense first person.',
+        grammar: 'Regular -er verbs: comí, comiste, comió, comimos'
+      },
+      // Vocabulary (3 lessons)
+      {
+        type: 'vocabulary',
+        question: 'What does "familia" mean?',
+        options: ['friend', 'family', 'food', 'house'],
+        correct: 1,
+        explanation: '"Familia" is similar to the English word "family".',
+        vocabulary: { word: 'familia', translation: 'family', example: 'Mi familia es grande.' }
+      },
+      {
+        type: 'vocabulary',
+        question: 'What does "trabajo" mean?',
+        options: ['work', 'travel', 'study', 'play'],
+        correct: 0,
+        explanation: '"Trabajo" means work or job.',
+        vocabulary: { word: 'trabajo', translation: 'work', example: 'Voy al trabajo.' }
+      },
+      {
+        type: 'vocabulary',
+        question: 'What does "amigo" mean?',
+        options: ['enemy', 'friend', 'brother', 'cousin'],
+        correct: 1,
+        explanation: '"Amigo" means friend (male). "Amiga" is female friend.',
+        vocabulary: { word: 'amigo', translation: 'friend', example: 'Mi mejor amigo' }
+      },
+      // Conversation (3 lessons)
+      {
         type: 'conversation',
         question: 'How would you say "Where is the bathroom?"',
         options: ['¿Dónde está el baño?', '¿Qué es esto?', '¿Cómo te llamas?', '¿Cuándo es?'],
         correct: 0,
         explanation: '"¿Dónde está?" means "Where is?" and "el baño" means "the bathroom".',
         vocabulary: { word: 'baño', translation: 'bathroom', example: 'El baño está a la derecha.' }
+      },
+      {
+        type: 'conversation',
+        question: 'How do you ask "What is your name?"',
+        options: ['¿Cómo estás?', '¿Cómo te llamas?', '¿Dónde vives?', '¿Qué hora es?'],
+        correct: 1,
+        explanation: '"¿Cómo te llamas?" literally means "How do you call yourself?"',
+        vocabulary: { word: '¿Cómo te llamas?', translation: 'What is your name?', example: '¿Cómo te llamas? Me llamo Ana.' }
+      },
+      {
+        type: 'conversation',
+        question: 'How would you order food politely?',
+        options: ['Quiero pizza', 'Dame pizza', 'Quisiera una pizza, por favor', 'Pizza ahora'],
+        correct: 2,
+        explanation: '"Quisiera" (I would like) is more polite than "Quiero" (I want).',
+        vocabulary: { word: 'Quisiera', translation: 'I would like', example: 'Quisiera café, por favor.' }
       }
     ],
     B2: [
@@ -285,6 +467,7 @@ export const LESSON_DATA = {
   },
   korean: {
     A1: [
+      // Hangul Alphabet (3 lessons)
       {
         type: 'alphabet',
         question: 'What sound does the Korean letter "ㄱ" make?',
@@ -294,6 +477,23 @@ export const LESSON_DATA = {
         vocabulary: { word: 'ㄱ', romanization: 'giyeok', translation: 'g/k sound', example: '가, 고, 구' }
       },
       {
+        type: 'alphabet',
+        question: 'What sound does "ㄴ" make?',
+        options: ['g sound', 'n sound', 'm sound', 's sound'],
+        correct: 1,
+        explanation: 'ㄴ makes an "n" sound.',
+        vocabulary: { word: 'ㄴ', romanization: 'nieun', translation: 'n sound', example: '나, 너, 노' }
+      },
+      {
+        type: 'alphabet',
+        question: 'Which vowel makes the "ah" sound?',
+        options: ['ㅏ (a)', 'ㅓ (eo)', 'ㅗ (o)', 'ㅜ (u)'],
+        correct: 0,
+        explanation: 'ㅏ makes the "ah" sound like in "father".',
+        vocabulary: { word: 'ㅏ', romanization: 'a', translation: 'ah sound', example: '가, 사, 마' }
+      },
+      // Numbers (3 lessons)
+      {
         type: 'numbers',
         question: 'How do you say "1" in Korean (native number)?',
         options: ['하나 (hana)', '둘 (dul)', '일 (il)', '셋 (set)'],
@@ -302,12 +502,37 @@ export const LESSON_DATA = {
         vocabulary: { word: '하나', romanization: 'hana', translation: 'one', example: '사과 하나' }
       },
       {
+        type: 'numbers',
+        question: 'How do you say "2" in Korean (native)?',
+        options: ['하나 (hana)', '둘 (dul)', '셋 (set)', '넷 (net)'],
+        correct: 1,
+        explanation: '둘 is native Korean for "two".',
+        vocabulary: { word: '둘', romanization: 'dul', translation: 'two', example: '둘이서' }
+      },
+      {
+        type: 'numbers',
+        question: 'What is "zero" in Korean?',
+        options: ['영 (yeong)', '일 (il)', '하나 (hana)', '공 (gong)'],
+        correct: 0,
+        explanation: '영 means zero. 공 is also used for zero in phone numbers.',
+        vocabulary: { word: '영', romanization: 'yeong', translation: 'zero', example: '영도' }
+      },
+      // Basic Vocabulary (4 lessons)
+      {
         type: 'vocabulary',
         question: 'How do you say "Hello" in Korean?',
-        options: ['안녕하세요', '감사합니다', '네', '아니요'],
+        options: ['안녕하세요 (annyeonghaseyo)', '감사합니다 (gamsahamnida)', '네 (ne)', '아니요 (aniyo)'],
         correct: 0,
-        explanation: '안녕하세요 (annyeonghaseyo) is the standard polite greeting.',
+        explanation: '안녕하세요 is the standard polite greeting.',
         vocabulary: { word: '안녕하세요', romanization: 'annyeonghaseyo', translation: 'Hello', example: '안녕하세요!' }
+      },
+      {
+        type: 'vocabulary',
+        question: 'How do you say "Goodbye" (to someone staying)?',
+        options: ['안녕히 가세요 (annyeonghi gaseyo)', '안녕히 계세요 (annyeonghi gyeseyo)', '감사합니다 (gamsahamnida)', '네 (ne)'],
+        correct: 1,
+        explanation: '안녕히 계세요 is said to someone who is staying when you leave.',
+        vocabulary: { word: '안녕히 계세요', romanization: 'annyeonghi gyeseyo', translation: 'Goodbye (stay well)', example: '안녕히 계세요!' }
       },
       {
         type: 'vocabulary',
@@ -324,6 +549,23 @@ export const LESSON_DATA = {
         correct: 1,
         explanation: '감사합니다 (gamsahamnida) is the formal way to say "thank you".',
         vocabulary: { word: '감사합니다', romanization: 'gamsahamnida', translation: 'Thank you', example: '도와주셔서 감사합니다.' }
+      },
+      // Basic Grammar (2 lessons)
+      {
+        type: 'grammar',
+        question: 'What is "I" in Korean?',
+        options: ['나 (na)', '너 (neo)', '우리 (uri)', '저 (jeo)'],
+        correct: 0,
+        explanation: '나 is informal "I". Use 저 in formal situations.',
+        grammar: 'Pronouns: 나 (I - informal), 저 (I - formal)'
+      },
+      {
+        type: 'grammar',
+        question: 'What is "you" in Korean (informal)?',
+        options: ['나 (na)', '너 (neo)', '저 (jeo)', '우리 (uri)'],
+        correct: 1,
+        explanation: '너 is informal "you" for close friends.',
+        grammar: 'Use 너 only with close friends, 당신 is formal'
       }
     ],
     A2: [
@@ -579,29 +821,29 @@ export const GAME_MODES = [
     id: 'story',
     name: 'Story Mode',
     icon: '📖',
-    description: 'Learn through interactive stories',
+    description: 'Complete learning experience - all lesson types',
     color: 'var(--spanish-primary)'
+  },
+  {
+    id: 'vocabulary',
+    name: 'Vocabulary Builder',
+    icon: '📚',
+    description: 'Focus on words, numbers, and alphabet',
+    color: 'var(--korean-accent)'
+  },
+  {
+    id: 'conversation',
+    name: 'Conversation Practice',
+    icon: '💬',
+    description: 'Real-world scenarios and practical usage',
+    color: 'var(--spanish-accent)'
   },
   {
     id: 'battle',
     name: 'Battle Arena',
     icon: '⚔️',
-    description: 'Timed challenges and competitions',
+    description: 'Grammar challenges - test your skills!',
     color: 'var(--korean-primary)'
-  },
-  {
-    id: 'conversation',
-    name: 'Conversation',
-    icon: '💬',
-    description: 'Practice real-world scenarios',
-    color: 'var(--spanish-accent)'
-  },
-  {
-    id: 'vocabulary',
-    name: 'Vocabulary',
-    icon: '📚',
-    description: 'Build your word bank',
-    color: 'var(--korean-accent)'
   }
 ];
 

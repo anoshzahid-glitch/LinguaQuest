@@ -1,20 +1,55 @@
 import { useState } from 'react';
 import { LESSON_DATA } from '../data/lessonData';
 
-function Lesson({ 
-  selectedLanguage, 
-  currentLevel, 
-  currentLessonIndex, 
-  setCurrentLessonIndex, 
-  updateStats, 
-  onBack 
+function Lesson({
+  selectedLanguage,
+  selectedMode,
+  currentLevel,
+  currentLessonIndex,
+  setCurrentLessonIndex,
+  updateStats,
+  onBack
 }) {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [feedback, setFeedback] = useState(null);
 
   const getLessonData = () => {
     if (!selectedLanguage || !currentLevel) return [];
-    return LESSON_DATA[selectedLanguage][currentLevel] || [];
+    const allLessons = LESSON_DATA[selectedLanguage][currentLevel] || [];
+
+    // Filter lessons based on game mode with smart fallbacks
+    let filteredLessons = [];
+
+    if (selectedMode === 'vocabulary') {
+      // Vocabulary mode: focus on words, numbers, alphabet
+      filteredLessons = allLessons.filter(lesson =>
+        lesson.type === 'vocabulary' || lesson.type === 'numbers' || lesson.type === 'alphabet'
+      );
+    } else if (selectedMode === 'conversation') {
+      // Conversation mode: real-world scenarios
+      filteredLessons = allLessons.filter(lesson =>
+        lesson.type === 'conversation' || lesson.type === 'vocabulary'
+      );
+      // Fallback: if no conversation lessons, show all vocabulary
+      if (filteredLessons.length === 0) {
+        filteredLessons = allLessons.filter(lesson => lesson.type === 'vocabulary');
+      }
+    } else if (selectedMode === 'battle') {
+      // Battle mode: grammar challenges and advanced content
+      filteredLessons = allLessons.filter(lesson =>
+        lesson.type === 'grammar' || lesson.type === 'advanced' || lesson.type === 'idiom' || lesson.type === 'honorific'
+      );
+      // Fallback for beginner levels: show all lessons if no advanced content
+      if (filteredLessons.length === 0 && (currentLevel === 'A1' || currentLevel === 'A2')) {
+        filteredLessons = allLessons; // Show all available lessons for beginners
+      }
+    } else {
+      // Story mode: all lesson types for comprehensive learning
+      filteredLessons = allLessons;
+    }
+
+    // Safety check: if somehow no lessons, return all
+    return filteredLessons.length > 0 ? filteredLessons : allLessons;
   };
 
   const lessons = getLessonData();

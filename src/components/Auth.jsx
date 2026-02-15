@@ -5,6 +5,7 @@ function Auth({ onLogin }) {
   const [mode, setMode] = useState('login');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -30,6 +31,7 @@ function Auth({ onLogin }) {
     setError('');
     setUsername('');
     setPassword('');
+    setEmail('');
   };
 
   return (
@@ -67,6 +69,19 @@ function Auth({ onLogin }) {
             />
           </div>
 
+          {mode === 'register' && (
+            <div>
+              <input
+                type="email"
+                className="auth-input"
+                placeholder="Email (optional)"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+              />
+            </div>
+          )}
+
           <div>
             <input
               type="password"
@@ -92,13 +107,19 @@ function Auth({ onLogin }) {
 
         {mode === 'register' && (
           <div style={{ marginTop: '1.5rem', color: 'var(--text-muted)', fontSize: '0.875rem', textAlign: 'center' }}>
-            Create your account to start learning and save your progress!
+            <p style={{ marginBottom: '0.5rem' }}>Create your account to start learning and save your progress!</p>
+            <p style={{ fontSize: '0.8rem', color: 'var(--korean-accent)' }}>
+              💾 Your progress is automatically saved in your browser and will be there when you return!
+            </p>
           </div>
         )}
 
         {mode === 'login' && (
           <div style={{ marginTop: '1.5rem', color: 'var(--text-muted)', fontSize: '0.875rem', textAlign: 'center' }}>
-            Welcome back! Login to continue your language journey.
+            <p style={{ marginBottom: '0.5rem' }}>Welcome back! Login to continue your language journey.</p>
+            <p style={{ fontSize: '0.8rem', color: 'var(--spanish-accent)' }}>
+              📚 Your progress, XP, and achievements are waiting for you!
+            </p>
           </div>
         )}
       </div>
