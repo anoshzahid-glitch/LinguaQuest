@@ -646,3 +646,95 @@ h1, h2, h3, h4 {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+
+/* Auth Styles */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.auth-tab.active {
+  color: var(--text-light);
+  border-bottom-color: var(--spanish-primary);
+}
+
+.auth-tab:hover {
+  color: var(--text-light);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-input {
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--spanish-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-error {
+  color: var(--error);
+  font-size: 0.875rem;
+  margin-top: -0.5rem;
+  padding: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--error);
+}
+
+.username-display {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+}

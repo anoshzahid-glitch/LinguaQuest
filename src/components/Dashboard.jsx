@@ -1,13 +1,15 @@
 import { GAME_MODES, LEVELS } from '../data/lessonData';
 
-function Dashboard({ 
-  selectedLanguage, 
-  currentLevel, 
-  setCurrentLevel, 
-  stats, 
-  achievements, 
-  onModeSelect, 
-  onBack 
+function Dashboard({
+  selectedLanguage,
+  currentLevel,
+  setCurrentLevel,
+  stats,
+  achievements,
+  currentUser,
+  onModeSelect,
+  onLogout,
+  onBack
 }) {
   const langStats = stats[selectedLanguage];
   const streakDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
@@ -16,9 +18,15 @@ function Dashboard({
     <div className="container">
       <div className="header">
         <h1 className="logo">LinguaQuest</h1>
-        <button className="btn btn-outline" onClick={onBack}>
-          Change Language
-        </button>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <span className="username-display">@{currentUser}</span>
+          <button className="btn btn-outline" onClick={onLogout}>
+            Logout
+          </button>
+          <button className="btn btn-outline" onClick={onBack}>
+            Change Language
+          </button>
+        </div>
       </div>
 
       <div className="glass-card">
