@@ -3,8 +3,8 @@ import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
 import Lesson from './components/Lesson';
 import Auth from './components/Auth';
-import { logout, getSession } from './utils/auth';
-import { loadUserData, saveUserData, INITIAL_USER_DATA } from './utils/storage';
+import { logout } from './utils/auth';
+import { loadUserData, saveUserData, getSession } from './utils/storage';
 
 function App() {
   // Auth state

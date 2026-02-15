@@ -738,3 +738,23 @@ h1, h2, h3, h4 {
   border-radius: 8px;
   font-family: 'JetBrains Mono', monospace;
 }
+
+/* Korean Romanization Support */
+.answer-option {
+  line-height: 1.6;
+}
+
+/* Make Korean text more readable with romanization */
+.vocab-word {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.romanization-hint {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--korean-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+}

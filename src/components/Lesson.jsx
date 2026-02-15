@@ -98,28 +98,48 @@ function Lesson({
       </div>
 
       <div className="lesson-card">
-        <div className="question">{currentLesson.question}</div>
+        <div className="question">
+          {currentLesson.question}
+          {selectedLanguage === 'korean' && (
+            <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '0.5rem', fontStyle: 'italic' }}>
+              💡 Korean text includes romanization in parentheses for pronunciation help
+            </div>
+          )}
+        </div>
 
         <div className="answer-grid">
-          {currentLesson.options.map((option, index) => (
-            <div
-              key={index}
-              className={`answer-option ${
-                selectedAnswer === index
-                  ? feedback?.correct
+          {currentLesson.options.map((option, index) => {
+            // Check if option contains Korean characters
+            const hasKorean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(option);
+            // Extract romanization if present in parentheses
+            const romanizationMatch = option.match(/\(([^)]+)\)/);
+            const displayText = hasKorean && romanizationMatch ? option : option;
+
+            return (
+              <div
+                key={index}
+                className={`answer-option ${
+                  selectedAnswer === index
+                    ? feedback?.correct
+                      ? 'correct'
+                      : 'incorrect'
+                    : ''
+                } ${
+                  feedback && index === currentLesson.correct
                     ? 'correct'
-                    : 'incorrect'
-                  : ''
-              } ${
-                feedback && index === currentLesson.correct
-                  ? 'correct'
-                  : ''
-              }`}
-              onClick={() => handleAnswerSelect(index)}
-            >
-              {option}
-            </div>
-          ))}
+                    : ''
+                }`}
+                onClick={() => handleAnswerSelect(index)}
+              >
+                <div>{displayText}</div>
+                {selectedLanguage === 'korean' && hasKorean && !romanizationMatch && (
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                    {/* Romanization helper for pure Korean text */}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {feedback && (
