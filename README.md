@@ -1,3 +1,7 @@
+🔗 **Live Demo:** Coming soon  
+📌 **Project:** LinguaQuest (React + Vite)  
+✨ **Focus:** Gamified language learning (Spanish & Korean)
+
 # 🎮 LinguaQuest
 
 **Master Spanish & Korean through immersive gameplay**
