@@ -1,4 +1,4 @@
-🔗 **Live Demo:** Coming soon  
+🔗 **Live Demo:** https://lingua-quest-ten.vercel.app/
 📌 **Project:** LinguaQuest (React + Vite)  
 ✨ **Focus:** Gamified language learning (Spanish & Korean)
 
